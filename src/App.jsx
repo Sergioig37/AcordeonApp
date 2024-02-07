@@ -5,8 +5,11 @@ import { Accordion } from './components/Accordion';
 export const App = () => {
   return (
     <>
-        <Header/>
+    <div className='container'>
+      <Header/>
         <Accordion/>
+    </div>
+        
     </>
   )
 }

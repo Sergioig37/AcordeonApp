@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-export const Accordionitem = () => {
+export const Accordionitem = ({pregunta, respuesta}) => {
+
+  const [clickado, setClickado] = useState(false);
+
+
   return (
-    <div>Accodrdionitem</div>
+   <>
+      <li className='accordion_item'>
+        <button className='button'>{pregunta}</button>
+        <div className='answer'>{respuesta}</div>
+      </li>
+   </>
   )
 }
