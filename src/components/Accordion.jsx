@@ -4,6 +4,7 @@ import { data } from "./data";
 
 export const Accordion = () => {
 
+  
 
 
   return (

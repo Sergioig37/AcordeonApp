@@ -1,11 +1,11 @@
  export const data = [
    {
         pregunta: "¿Quienes somos?",
-        respuesta: "Blabalalabalbabldsfadlifjadlsjflkasd" 
+        respuesta: "¿Yo? Soy Sergio, un placer, encantado de conocerte" 
     },
     {
         pregunta: "¿A dónde vamos ?",
-        respuesta: "Blabalalabalbabldsfadlifjadlsjflkasd" 
+        respuesta: "Pues no sé la verdad, me gustaría saberlo" 
     },
     {
         pregunta: "¿Por qué somos?",
