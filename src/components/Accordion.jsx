@@ -6,9 +6,15 @@ export const Accordion = () => {
   return (
     <>
       <ul className="accordion">
-        {data.map((objeto) => {
-          <Accordionitem acordeon={objeto} />;
-        })}
+        {
+        data.map((objeto) => (
+          <li>
+             <Accordionitem acordeon={objeto} />
+          </li>
+         
+        )
+        )
+        }
       </ul>
     </>
   );
