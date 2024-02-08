@@ -4,27 +4,31 @@ export const Accordionitem = ({ pregunta, respuesta }) => {
   const [usado, setClickado] = useState(false);
   const open = "open";
   const active = "active";
-  const [accordionWrapper, setAccordionWrapper] = useState("answer_wrapper");
-  const [accordionItem, setAccordionItem] = useState("accordion_item");
+  const [elementoActivo, setElementoActivo] = useState();
+  
 
-  const mostrarRespuesta = () => {
+  const mostrarRespuesta = (evento) => {
+    
+
+
+
     if (usado===false) {
-      setAccordionWrapper(`answer_wrapper ${open}`);
-      setAccordionItem(`accordion_item ${active}`);
+      evento.target.parentNode.classList.add(active);
+      evento.target.nextSibling.classList.add(open);
       setClickado(true);
     } else {
-      setAccordionWrapper("answer_wrapper");
-      setAccordionItem("accordion_item");
+      evento.target.parentNode.classList.remove(active);
+      evento.target.nextSibling.classList.remove(open);
       setClickado(false);
     }
   };
   return (
     <>
-      <li className={accordionItem}>
+      <li className="accordion_item">
         <button className="button" onClick={mostrarRespuesta}>
           {pregunta}
         </button>
-        <div className={accordionWrapper}>
+        <div className="answer_wrapper">
           <p className="answer">{respuesta}</p>
         </div>
       </li>
