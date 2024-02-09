@@ -7,7 +7,7 @@ export const App = () => {
     <>
     <div className='container'>
       <Header/>
-        <Accordion/>
+      <Accordion/>
     </div>
         
     </>

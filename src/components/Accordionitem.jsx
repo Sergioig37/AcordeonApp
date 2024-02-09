@@ -1,17 +1,14 @@
 import React, { useState } from "react";
 
-export const Accordionitem = ({ pregunta, respuesta }) => {
+export const Accordionitem = ({ pregunta, respuesta, indice}) => {
+
   const [usado, setClickado] = useState(false);
   const open = "open";
   const active = "active";
-  const [elementoActivo, setElementoActivo] = useState();
   
 
   const mostrarRespuesta = (evento) => {
     
-
-
-
     if (usado===false) {
       evento.target.parentNode.classList.add(active);
       evento.target.nextSibling.classList.add(open);
@@ -22,9 +19,13 @@ export const Accordionitem = ({ pregunta, respuesta }) => {
       setClickado(false);
     }
   };
+
+
+console.log(indice);
+
   return (
     <>
-      <li className="accordion_item">
+      <li className="accordion_item" key={indice}>
         <button className="button" onClick={mostrarRespuesta}>
           {pregunta}
         </button>
