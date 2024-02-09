@@ -1,51 +1,19 @@
 import React, { useState } from "react";
 
-export const Accordionitem = ({ pregunta, respuesta }) => {
+export const Accordionitem = ({ pregunta, respuesta, indice,  toggle, active}) => {
 
-  const [clicked, setClicked] = useState(null);
-  const [hijo, setHijo] = useState(null);
-
-  const toggleItem = (evento) => {
-
-
-    if (clicked !== null) {
-
-
-      if (clicked.classList === evento.target.parentNode.classList) {
-
-        evento.target.nextSibling.classList.remove("open");
-        evento.target.parentNode.classList.remove("active");
-        setHijo(null);
-        return  setClicked(null);
-
-      } else if (clicked.classList !== evento.target.parentNode.classList) {
-        
-        hijo.classList.remove("open");
-        clicked.classList.remove("active");
-        evento.target.parentNode.classList.add("active");
-        evento.target.nextSibling.classList.add("open");
-        setClicked(evento.target.parentNode);
-      }
+    const mandarIndice = () => {
+      toggle(indice);
     }
-    else{
-
-      setClicked(evento.target.parentNode);
-      setHijo(evento.target.nextSibling);
-      evento.target.parentNode.classList.add("active");
-      evento.target.nextSibling.classList.add("open");
-      
-    }
-  };
-
 
   return (
     <>
-      <li className="accordion_item">
-        <button className="button" onClick={toggleItem}>
+      <li className={!active ? "accordion_item " : "accordion_item active"}>
+        <button className="button" onClick={mandarIndice}>
           {pregunta}
-          <span className="control">+</span>
+          <span className="control">{!active ? "+" : "-"}</span>
         </button>
-        <div className="answer_wrapper">
+        <div className={!active ? "answer_wrapper " : "answer_wraper open"}>
           <p className="answer">{respuesta}</p>
         </div>
       </li>
